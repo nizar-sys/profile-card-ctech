@@ -120,7 +120,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                'fnganggur / ngoding',
+                'nganggur / ngoding',
                 style: TextStyle(
                   fontSize: 18,
                 ),
