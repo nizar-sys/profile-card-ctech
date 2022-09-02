@@ -7,7 +7,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 8,
+      seconds: 20,
       navigateAfterSeconds: const HomeScreen(),
       title: const Text(
         'Welcome In CTech Apps',
