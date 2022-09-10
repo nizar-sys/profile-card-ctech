@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prof_card/home/home_screen.dart';
+import 'package:prof_card/news/news_detail_screen.dart';
+import 'package:prof_card/news/news_list_screen.dart';
 import 'package:prof_card/profile/profile_screen.dart';
 import 'package:prof_card/splash/loading_screen.dart';
+import 'package:prof_card/users/users_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +34,10 @@ class MyApp extends StatelessWidget {
       routes: {
         'loading': (context) => const LoadingScreen(),
         'home': (context) => const HomeScreen(),
-        'profile': (context) => const ProfileScreen()
+        'profile': (context) => const ProfileScreen(),
+        'newsList': (context) => const NewsListScreen(),
+        'newsDetail': (context) => const NewsDetailScreen(),
+        'userList': (context) => const UserListScreen(),
       },
     );
   }
