@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prof_card/home/home_screen.dart';
+import 'package:prof_card/menu/menu_screen.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class LoadingScreen extends StatelessWidget {
@@ -8,7 +8,7 @@ class LoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 10,
-      navigateAfterSeconds: const HomeScreen(),
+      navigateAfterSeconds: const MenuScreen(),
       title: const Text(
         'Welcome In CTech Apps',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),

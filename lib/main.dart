@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prof_card/home/home_screen.dart';
+import 'package:prof_card/login/login_screen.dart';
+import 'package:prof_card/menu/menu_screen.dart';
 import 'package:prof_card/news/news_detail_screen.dart';
 import 'package:prof_card/news/news_list_screen.dart';
 import 'package:prof_card/profile/profile_screen.dart';
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -38,6 +41,8 @@ class MyApp extends StatelessWidget {
         'newsList': (context) => const NewsListScreen(),
         'newsDetail': (context) => const NewsDetailScreen(),
         'userList': (context) => const UserListScreen(),
+        'menu': (context) => const MenuScreen(),
+        'login': (context) => const LoginScreen()
       },
     );
   }

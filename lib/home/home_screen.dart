@@ -1,78 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:prof_card/home/home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () => {Navigator.pushNamed(context, 'profile')},
-            icon: const Icon(Icons.person_off_outlined),
-            tooltip: 'My profile',
-          ),
-        ],
-      ),
-      body: const Center(child: Text('Ctech Appss home')),
-      bottomNavigationBar: Container(
-        height: 60,
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {},
-              icon: const Icon(
-                Icons.home_outlined,
-                color: Colors.white,
-                size: 35,
+    return GetBuilder(
+      init: HomeController(),
+      builder: (HomeController controller) {
+        return Scaffold(
+          body: Center(
+              child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 100, bottom: 30),
+                child: Image.network(
+                  'https://image.freepik.com/free-vector/welcome-colorful-letters-with-people-characters-flat-vector-illustration-isolated_118421-423.jpg',
+                  width: 150,
+                  height: 150,
+                ),
               ),
-            ),
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                Navigator.pushNamed(context, 'newsList');
-              },
-              icon: const Icon(
-                Icons.newspaper,
-                color: Colors.white,
-                size: 35,
+              Text(
+                "Selamat datang, ${controller.namaLengkap}!",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(color: Colors.black),
               ),
-            ),
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                Navigator.pushNamed(context, 'userList');
-              },
-              icon: const Icon(
-                Icons.person,
-                color: Colors.white,
-                size: 35,
+              const SizedBox(
+                height: 8,
               ),
-            ),
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                Navigator.pushNamed(context, 'profile');
-              },
-              icon: const Icon(
-                Icons.settings,
-                color: Colors.white,
-                size: 35,
-              ),
-            ),
-          ],
-        ),
-      ),
+              Text("Ctech apps home.",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2
+                      ?.copyWith(color: Colors.black))
+            ],
+          )),
+        );
+      },
     );
   }
 }

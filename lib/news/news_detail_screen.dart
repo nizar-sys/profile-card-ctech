@@ -30,7 +30,7 @@ class NewsDetailScreen extends StatelessWidget {
               height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: <Widget>[
@@ -48,7 +48,7 @@ class NewsDetailScreen extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.all(1.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
@@ -62,16 +62,6 @@ class NewsDetailScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: ElevatedButton.icon(
-                icon: const Icon(Icons.home, size: 16),
-                label: const Text('Back to home'),
-                onPressed: () => {Navigator.pop(context)},
-              ),
-            )
           ],
         ));
   }
