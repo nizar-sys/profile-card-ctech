@@ -13,7 +13,7 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  var listPopMenu = {'Logout'};
+  var listPopMenu = ['Edit Profile', 'Logout'];
 
   int navIndex = 0;
 
@@ -33,15 +33,19 @@ class _MenuScreenState extends State<MenuScreen> {
         title: Text(titlePage[navIndex]),
         actions: [
           PopupMenuButton(
-            onSelected: ((value) {
-              handleClick(context, value);
-            }),
-            itemBuilder: ((context) {
-              return listPopMenu.map((choice) {
-                return PopupMenuItem(value: choice, child: Text(choice));
-              }).toList();
-            }),
-          )
+              onSelected: ((value) {
+                handleClick(context, value);
+              }),
+              itemBuilder: (context) => [
+                    const PopupMenuItem(
+                      value: 'Edit Profile',
+                      child: Text("Edit Profile"),
+                    ),
+                    const PopupMenuItem(
+                      value: 'Logout',
+                      child: Text("Logout"),
+                    )
+                  ]),
         ],
       ),
       body: listWidget[navIndex],
@@ -69,6 +73,9 @@ class _MenuScreenState extends State<MenuScreen> {
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
         Get.offNamed("login");
+        break;
+      case 'Edit Profile':
+        Get.toNamed('edit_profile');
         break;
       default:
     }
